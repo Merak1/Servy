@@ -1,19 +1,17 @@
 defmodule Servy.Plugins do
   alias Servy.Conv
+  import Servy.Helpers
   def track(%Conv{status: 200, path: path} = conv ) do
-  formatted_warning = IO.ANSI.blue_background() <> "Success#{path}," <> IO.ANSI.reset()
-  IO.puts(formatted_warning)
+    green( "Success#{path},")
   conv
 end
 
 def track(%Conv{status: 404, path: path} = conv ) do
-  formatted_warning = IO.ANSI.red_background() <> "Waring: #{path}, not found" <> IO.ANSI.reset()
-  IO.puts(formatted_warning)
+    red("Waring: #{path}, not found")
   conv
 end
 def track(%Conv{status: 403, path: path} = conv ) do
-  formatted_warning = IO.ANSI.magenta_background() <> "Forbiden path: #{path} |  Status : #{403} " <> IO.ANSI.reset()
-  IO.puts(formatted_warning)
+   magenta("Forbiden path: #{path} |  Status : #{403} ")
   conv
 end
 def track(%Conv{} = conv), do: conv

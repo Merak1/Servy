@@ -84,79 +84,79 @@ defmodule Servy.Handler do
 
 end
 
-# request1 = """
-# GET /wildthings HTTP/1.1
-# Host: example.com
-# User-Agent: ExampleBrowser/1.0
-# Accept: */*
+request1 = """
+GET /wildthings HTTP/1.1
+Host: example.com
+User-Agent: ExampleBrowser/1.0
+Accept: */*
 
-# """
-# request2 = """
-# GET /bears HTTP/1.1
-# Host: example.com
-# User-Agent: ExampleBrowser/1.0
-# Accept: */*
+"""
+request2 = """
+GET /bears HTTP/1.1
+Host: example.com
+User-Agent: ExampleBrowser/1.0
+Accept: */*
 
-# """
-# request3 = """
-# GET /bigfoot HTTP/1.1
-# Host: example.com
-# User-Agent: ExampleBrowser/1.0
-# Accept: */*
+"""
+request3 = """
+GET /bigfoot HTTP/1.1
+Host: example.com
+User-Agent: ExampleBrowser/1.0
+Accept: */*
 
-# """
-# request4 = """
-# GET /bears/1 HTTP/1.1
-# Host: example.com
-# User-Agent: ExampleBrowser/1.0
-# Accept: */*
+"""
+request4 = """
+GET /bears/1 HTTP/1.1
+Host: example.com
+User-Agent: ExampleBrowser/1.0
+Accept: */*
 
-# """
-# request5 = """
-# DELETE /bears/1 HTTP/1.1
-# Host: example.com
-# User-Agent: ExampleBrowser/1.0
-# Accept: */*
+"""
+request5 = """
+DELETE /bears/1 HTTP/1.1
+Host: example.com
+User-Agent: ExampleBrowser/1.0
+Accept: */*
 
-# """
-# request6 = """
-# GET /wildlife HTTP/1.1
-# Host: example.com
-# User-Agent: ExampleBrowser/1.0
-# Accept: */*
+"""
+request6 = """
+GET /wildlife HTTP/1.1
+Host: example.com
+User-Agent: ExampleBrowser/1.0
+Accept: */*
 
-# """
-# request7 = """
-# GET /bears?id=1 HTTP/1.1
-# Host: example.com
-# User-Agent: ExampleBrowser/1.0
-# Accept: */*
+"""
+request7 = """
+GET /bears?id=1 HTTP/1.1
+Host: example.com
+User-Agent: ExampleBrowser/1.0
+Accept: */*
 
-# """
+"""
 
-# request8 = """
-# GET /about HTTP/1.1
-# Host: example.com
-# User-Agent: ExampleBrowser/1.0
-# Accept: */*
+request8 = """
+GET /about HTTP/1.1
+Host: example.com
+User-Agent: ExampleBrowser/1.0
+Accept: */*
 
-# """
+"""
 
-# request9 = """
-# GET /bears/new HTTP/1.1
-# Host: example.com
-# User-Agent: ExampleBrowser/1.0
-# Accept: */*
+request9 = """
+GET /bears/new HTTP/1.1
+Host: example.com
+User-Agent: ExampleBrowser/1.0
+Accept: */*
 
-# """
+"""
 
-# request10 = """
-# GET /pages/contact HTTP/1.1
-# Host: example.com
-# User-Agent: ExampleBrowser/1.0
-# Accept: */*
+request10 = """
+GET /pages/contact HTTP/1.1
+Host: example.com
+User-Agent: ExampleBrowser/1.0
+Accept: */*
 
-# """
+"""
 request11 = """
 POST /bears HTTP/1.1
 Host: example.com
@@ -168,14 +168,14 @@ Content-Length: 21
 name=Baloo&type=Brown
 """
 
-  # Servy.Helpers.custom_log_servy_handler(request1)
-  # Servy.Helpers.custom_log_servy_handler(request2)
-  # Servy.Helpers.custom_log_servy_handler(request3)
-  # Servy.Helpers.custom_log_servy_handler(request4)
-  # Servy.Helpers.custom_log_servy_handler(request5)
-  # Servy.Helpers.custom_log_servy_handler(request6)
-  # Servy.Helpers.custom_log_servy_handler(request7)
-  # Servy.Helpers.custom_log_servy_handler(request8)
-  # Servy.Helpers.custom_log_servy_handler(request9)
-  # Servy.Helpers.custom_log_servy_handler(request10)
+  Servy.Helpers.custom_log_servy_handler(request1)
+  Servy.Helpers.custom_log_servy_handler(request2)
+  Servy.Helpers.custom_log_servy_handler(request3)
+  Servy.Helpers.custom_log_servy_handler(request4)
+  Servy.Helpers.custom_log_servy_handler(request5)
+  Servy.Helpers.custom_log_servy_handler(request6)
+  Servy.Helpers.custom_log_servy_handler(request7)
+  Servy.Helpers.custom_log_servy_handler(request8)
+  Servy.Helpers.custom_log_servy_handler(request9)
+  Servy.Helpers.custom_log_servy_handler(request10)
   Servy.Helpers.custom_log_servy_handler(request11)
