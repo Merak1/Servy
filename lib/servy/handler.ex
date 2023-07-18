@@ -7,9 +7,10 @@ defmodule Servy.Handler do
   import Servy.Plugins, only: [rewrite_path: 1, log: 1, track: 1]
   import Servy.Parser, only: [parse: 1]
   import Servy.HandleFile
+  import Servy.Helpers
 
   alias Servy.Conv
-
+  alias Servy.BearController
 
 
   def handle(request) do
@@ -42,13 +43,19 @@ defmodule Servy.Handler do
 
 
   def route(%Conv{method: "GET" , path: "/bears"} = conv) do
-    %{conv | status: 200, resp_body: "Teddy, Smoking, other bear"}
+    BearController.index(conv)
+  end
+
+  def route(%Conv{method: "GET" , path: "/bears"<> id } = conv) do
+    params = Map.put(conv.params, "id", id)
+    red_map(params)
+    BearController.show(conv, params)
   end
 
   # name=Baloo&type=Brown
   def route(%Conv{method: "POST" , path: "/bears"} = conv) do
-    %{conv | status: 201,
-     resp_body: "Created a #{conv.params["type"]} bear named #{conv.params["name"]}"}
+    # params = Map.put(conv.params)
+    BearController.create(conv, conv.params)
   end
 
   def route(%Conv{method: "GET" , path: "/bears/new" } = conv) do
@@ -58,9 +65,6 @@ defmodule Servy.Handler do
     |> handle_file(conv)
   end
 
-  def route(%Conv{method: "GET" , path: "/bears"<> id } = conv) do
-    %{conv | status: 200, resp_body: "Bear #{id}"}
-  end
 
   def route(%Conv{method: "DELETE" } = conv) do
     %{conv | status: 403, resp_body: "You cannot delete"}
@@ -110,6 +114,7 @@ GET /bears/1 HTTP/1.1
 Host: example.com
 User-Agent: ExampleBrowser/1.0
 Accept: */*
+
 
 """
 request5 = """
@@ -168,14 +173,14 @@ Content-Length: 21
 name=Baloo&type=Brown
 """
 
-  Servy.Helpers.custom_log_servy_handler(request1)
-  Servy.Helpers.custom_log_servy_handler(request2)
-  Servy.Helpers.custom_log_servy_handler(request3)
-  Servy.Helpers.custom_log_servy_handler(request4)
-  Servy.Helpers.custom_log_servy_handler(request5)
-  Servy.Helpers.custom_log_servy_handler(request6)
-  Servy.Helpers.custom_log_servy_handler(request7)
-  Servy.Helpers.custom_log_servy_handler(request8)
-  Servy.Helpers.custom_log_servy_handler(request9)
-  Servy.Helpers.custom_log_servy_handler(request10)
+  # Servy.Helpers.custom_log_servy_handler(request1)
+  # Servy.Helpers.custom_log_servy_handler(request2)
+  # Servy.Helpers.custom_log_servy_handler(request3)
+  # Servy.Helpers.custom_log_servy_handler(request4)
+  # Servy.Helpers.custom_log_servy_handler(request5)
+  # Servy.Helpers.custom_log_servy_handler(request6)
+  # Servy.Helpers.custom_log_servy_handler(request7)
+  # Servy.Helpers.custom_log_servy_handler(request8)
+  # Servy.Helpers.custom_log_servy_handler(request9)
+  # Servy.Helpers.custom_log_servy_handler(request10)
   Servy.Helpers.custom_log_servy_handler(request11)
