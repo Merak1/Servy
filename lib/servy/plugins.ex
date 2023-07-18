@@ -21,7 +21,6 @@ def rewrite_path( %Conv{path: "/wildlife"} = conv ) do
 end
 
 def rewrite_path( %Conv{path: "/bears?id=" <> id} = conv ) do
-  # IO.puts(" 🧡 #{id}")
   %{conv | path: "/bears/" <> id}
 end
 
