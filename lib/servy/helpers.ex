@@ -1,28 +1,34 @@
 defmodule Servy.Helpers do
   def custom_log_servy_handler(request) do
        IO.puts(Servy.Handler.handle(request))
-      # "ee"
   end
 
-  def red(element) do
-     warning =  IO.ANSI.red_background() <> "#{element}" <> IO.ANSI.reset()
-     IO.puts(warning)
+   def red(element) do
+     IO.ANSI.red_background() <> "#{element}" <> IO.ANSI.reset()
+     |> IO.puts()
+   end
+
+   def green(element) do
+      IO.ANSI.green_background() <> "#{element}" <> IO.ANSI.reset()
+      |> IO.puts()
   end
 
-  def green(element) do
-     IO.puts( IO.ANSI.green_background() <> "#{element}" <> IO.ANSI.reset())
-  end
+   def blue(element) do
+      IO.ANSI.blue_background() <> "#{element}" <> IO.ANSI.reset()
+      |> IO.puts()  end
+   def magenta(element) do
+      IO.ANSI.green_background() <> "#{element}" <> IO.ANSI.reset()
+      |> IO.puts()
+   end
+   def yellow(element) do
+      IO.ANSI.yellow_background() <> "#{element}" <> IO.ANSI.reset()
+      |> IO.puts()
+   end
 
-  def blue(element) do
-     IO.puts( IO.ANSI.blue_background() <> "#{element}" <> IO.ANSI.reset())
+   def red_map(element)do
+      IO.ANSI.red_background() <>"#{inspect(element)}" <> IO.ANSI.reset()
+      |>
+      IO.puts()
   end
-  def magenta(element) do
-     IO.puts( IO.ANSI.magenta_background() <> "#{element}" <> IO.ANSI.reset())
-  end
-  def yellow(element) do
-     IO.puts( IO.ANSI.yellow_background() <>IO.ANSI.black() <> "#{element}" <> IO.ANSI.reset())
-  end
-
-
 
 end
