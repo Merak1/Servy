@@ -67,7 +67,7 @@ defmodule Servy.Handler do
 
 
   def route(%Conv{method: "DELETE" } = conv) do
-    %{conv | status: 403, resp_body: "You cannot delete"}
+    BearController.delete(conv, conv.params)
   end
 
   def route(%Conv{ path: path } = conv) do
@@ -174,13 +174,13 @@ name=Baloo&type=Brown
 """
 
   # Servy.Helpers.custom_log_servy_handler(request1)
-  # Servy.Helpers.custom_log_servy_handler(request2)
+  Servy.Helpers.custom_log_servy_handler(request2)
   # Servy.Helpers.custom_log_servy_handler(request3)
   # Servy.Helpers.custom_log_servy_handler(request4)
-  # Servy.Helpers.custom_log_servy_handler(request5)
+  Servy.Helpers.custom_log_servy_handler(request5)
   # Servy.Helpers.custom_log_servy_handler(request6)
   # Servy.Helpers.custom_log_servy_handler(request7)
   # Servy.Helpers.custom_log_servy_handler(request8)
   # Servy.Helpers.custom_log_servy_handler(request9)
   # Servy.Helpers.custom_log_servy_handler(request10)
-  Servy.Helpers.custom_log_servy_handler(request11)
+  # Servy.Helpers.custom_log_servy_handler(request11)
