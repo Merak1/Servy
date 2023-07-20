@@ -174,10 +174,10 @@ name=Baloo&type=Brown
 """
 
   # Servy.Helpers.custom_log_servy_handler(request1)
-  Servy.Helpers.custom_log_servy_handler(request2)
+  # Servy.Helpers.custom_log_servy_handler(request2)
   # Servy.Helpers.custom_log_servy_handler(request3)
-  # Servy.Helpers.custom_log_servy_handler(request4)
-  Servy.Helpers.custom_log_servy_handler(request5)
+  Servy.Helpers.custom_log_servy_handler(request4)
+  # Servy.Helpers.custom_log_servy_handler(request5)
   # Servy.Helpers.custom_log_servy_handler(request6)
   # Servy.Helpers.custom_log_servy_handler(request7)
   # Servy.Helpers.custom_log_servy_handler(request8)
