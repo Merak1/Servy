@@ -17,7 +17,7 @@ defmodule Servy.Helpers do
       IO.ANSI.blue_background() <> "#{element}" <> IO.ANSI.reset()
       |> IO.puts()  end
    def magenta(element) do
-      IO.ANSI.green_background() <> "#{element}" <> IO.ANSI.reset()
+      IO.ANSI.magenta_background() <> "#{element}" <> IO.ANSI.reset()
       |> IO.puts()
    end
    def yellow(element) do
