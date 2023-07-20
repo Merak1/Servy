@@ -27,6 +27,11 @@ end
 def rewrite_path( %Conv{} = conv ), do: conv
 
 
-def log(%Conv{} = conv), do: IO.inspect conv
+def log(%Conv{} = conv)do
+  if Mix.env == :dev do
+    IO.inspect conv
+  end
+  conv
+ end
 
 end
