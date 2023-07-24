@@ -55,6 +55,10 @@ defmodule Servy.Handler do
 
   # name=Baloo&type=Brown
 
+  def route(%Conv{method: "GET" , path: "/api/bears"} = conv) do
+    Servy.Api.BearController.index(conv)
+  end
+
 
   def route(%Conv{method: "GET" , path: "/bears/new" } = conv) do
     @pages_path
@@ -78,7 +82,7 @@ defmodule Servy.Handler do
 
   """
   HTTP/1.1 #{Conv.full_status(conv)}\r
-  Content-Type: text/html\r
+  Content-Type: #{conv.resp_content_type}\r
   Content-Length: #{String.length(conv.resp_body)}\r
   \r
   #{conv.resp_body}
@@ -86,16 +90,3 @@ defmodule Servy.Handler do
   end
 
 end
-
-
-  # Servy.Helpers.custom_log_servy_handler(request1)
-  # Servy.Helpers.custom_log_servy_handler(request2)
-  # Servy.Helpers.custom_log_servy_handler(request3)
-  # Servy.Helpers.custom_log_servy_handler(request4)
-  # Servy.Helpers.custom_log_servy_handler(request5)
-  # Servy.Helpers.custom_log_servy_handler(request6)
-  # Servy.Helpers.custom_log_servy_handler(request7)
-  # Servy.Helpers.custom_log_servy_handler(request8)
-  # Servy.Helpers.custom_log_servy_handler(request9)
-  # Servy.Helpers.custom_log_servy_handler(request10)
-  # Servy.Helpers.custom_log_servy_handler(request11)
